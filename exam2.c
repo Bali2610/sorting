@@ -1,16 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Merges two subarrays of arr[].
-// First subarray is arr[l..m]
-// Second subarray is arr[m+1..r]
 void merge(int arr[], int l, int m, int r)
 {
 	int i, j, k;
 	int n1 = m - l + 1;
-	int n2 = r - m;
-
-	// Create temp arrays
+	int n2 = r -m;
 	int L[n1], R[n2];
 
 	// Copy data to temp arrays L[] and R[]
@@ -34,26 +28,17 @@ void merge(int arr[], int l, int m, int r)
 		}
 		k++;
 	}
-
-	// Copy the remaining elements of L[],
-	// if there are any
 	while (i < n1) {
 		arr[k] = L[i];
 		i++;
 		k++;
 	}
-
-	// Copy the remaining elements of R[],
-	// if there are any
 	while (j < n2) {
 		arr[k] = R[j];
 		j++;
 		k++;
 	}
 }
-
-// l is for left index and r is right index of the
-// sub-array of arr to be sorted
 void mergeSort(int arr[], int l, int r)
 {
 	if (l < r) {
